@@ -7,3 +7,4 @@ class Persona(models.Model):
     edad = models.IntegerField()
     sexoM = models.BooleanField()
     actividad = models.CharField(max_length=100)
+    imagen = models.CharField(max_length=200)

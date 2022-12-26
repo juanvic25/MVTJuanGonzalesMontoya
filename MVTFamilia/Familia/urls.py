@@ -1,8 +1,7 @@
 from django.urls import path
-from Familia.views import CrearFamilia, ListarFamilia, LimpiarFamilia
+from Familia.views import CrearFamilia, ListarFamilia
 
 urlpatterns = [
     path('crear-familia/',CrearFamilia),
-    path('listar-familia/',ListarFamilia),
-    path('borrar-familia/',LimpiarFamilia),
+    path('listar-familia/',ListarFamilia)
 ]

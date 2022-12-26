@@ -5,19 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Familiares</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <nav class="navbar" style="background-color: #e3f2fd;">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="../../">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="../../familia/crear-familia/">Crear Familia</a>
+            </div>
+          </div>
+        </nav>
+        </div>
+      </nav>
+
     <h2>LOS MIEMBROS DE LA FAMILIA SON:</h2>
-    {% for miembro in familia %}
-        <h3>{{miembro.tipo}}</h3>
-        <p>Nombre: {{miembro.nombre}}</p>
-        <p>Edad: {{miembro.edad}}</p>
-        {% if miembro.sexoM == True %}
-            <p>Sexo: Masculino</p>
-        {% else %}
-            <p>Sexo: Femenino</p>
-        {% endif %}
-        <p>Actividad: {{miembro.actividad}}</p>
-    {% endfor %}
+    <p></p>
+    <div class="card-group">
+        {% for miembro in familia %}
+        <div class="card">
+          <img style="height:280px; width:250px;" src={{miembro.imagen}} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><u>{{miembro.tipo}}</u></h5>
+            <p class="card-text">
+                <p><b>Nombre:</b> {{miembro.nombre}}</p>
+                <p><b>Edad:</b> {{miembro.edad}}</p>
+                {% if miembro.sexoM == True %}
+                    <p><b>Sexo:</b> Masculino</p>
+                {% else %}
+                    <p><b>Sexo:</b> Femenino</p>
+                {% endif %}
+                <p><b>Actividad:</b> {{miembro.actividad}}</p>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    
 </body>
 </html>
