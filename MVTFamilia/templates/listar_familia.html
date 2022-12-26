@@ -7,13 +7,17 @@
     <title>Lista de Familiares</title>
 </head>
 <body>
-    <h3>LOS MIEMBROS DE LA FAMILIA SON:</h3>
+    <h2>LOS MIEMBROS DE LA FAMILIA SON:</h2>
     {% for miembro in familia %}
-    {{miembro.tipo}}
-    {{miembro.nombre}}
-    {{miembro.edad}}
-    {{miembro.sexoM}}
-    {{miembro.actividad}}
+        <h3>{{miembro.tipo}}</h3>
+        <p>Nombre: {{miembro.nombre}}</p>
+        <p>Edad: {{miembro.edad}}</p>
+        {% if miembro.sexoM == True %}
+            <p>Sexo: Masculino</p>
+        {% else %}
+            <p>Sexo: Femenino</p>
+        {% endif %}
+        <p>Actividad: {{miembro.actividad}}</p>
     {% endfor %}
 </body>
 </html>
